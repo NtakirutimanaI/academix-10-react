@@ -11,7 +11,6 @@ import DOD from "./pages/DOD/DOD";
 import Headmaster from "./pages/headmaster/Headmaster";
 
 function App() {
-<<<<<<< HEAD
   return (
     <Router>
       <Routes>
@@ -32,14 +31,6 @@ function App() {
       </Routes>
     </Router>
   );
-=======
-  
-  return (
-   <>
-   <h2>simple header</h2>
-   </>
-  )
->>>>>>> 2f96f3a9f3edf71a3288146554e9f91bea0c72b4
 }
 
 export default App;
