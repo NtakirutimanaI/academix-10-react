@@ -7,6 +7,7 @@ function App() {
   
   return (
    <>
+   <h2>simple header</h2>
    </>
   )
 }
