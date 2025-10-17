@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./pages/website/Landing";
+import Register from "./pages/website/Register";
+import Login from "./pages/website/Login";
+import Student from "./pages/student/Student";
+import Parent from "./pages/parent/Parent";
+import Teacher from "./pages/teacher/Teacher";
+import DOS from "./pages/DOS/DOS";
+import DOD from "./pages/DOD/DOD";
+import Headmaster from "./pages/headmaster/Headmaster";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Landing page */}
+        <Route path="/" element={<Landing />} />
+
+        {/* Register & Login */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Dashboards */}
+        <Route path="/student" element={<Student />} />
+        <Route path="/parent" element={<Parent />} />
+        <Route path="/teacher" element={<Teacher />} />
+        <Route path="/dos" element={<DOS />} />
+        <Route path="/dod" element={<DOD />} />
+        <Route path="/headmaster" element={<Headmaster />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
