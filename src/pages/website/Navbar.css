@@ -3,9 +3,10 @@
   background-color: #002f5f;
   padding: 0 20px;
   display: flex;
-  justify-content: space-between; /* Brand left, menu right */
+  justify-content: space-between;
   align-items: center;
   height: 60px;
+  position: relative;
 }
 
 /* Brand name (ACADEMIX) */
@@ -25,8 +26,13 @@
   justify-content: flex-end;
   padding: 0;
   margin: 0;
-  font-size: 9px; /* Smallest readable font */
-  width: 60%; /* Menu takes 60% of navbar width */
+  font-size: 9px;
+  width: 60%;
+  transition: max-height 0.3s ease;
+}
+
+.menu.open {
+  max-height: 1000px;
 }
 
 /* Individual menu items */
@@ -53,7 +59,7 @@
   border-bottom: 2px solid #ffcc00;
 }
 
-/* Dropdown container (hidden by default) */
+/* Dropdown container */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -87,7 +93,6 @@
   font-size: 9px;
 }
 
-/* Dropdown links */
 .dropdown-column a {
   color: white;
   padding: 4px 0;
@@ -95,12 +100,18 @@
   font-weight: normal;
   border-bottom: 1px solid transparent;
   transition: border-bottom 0.3s, background 0.3s, padding-left 0.3s;
+  display: flex;
+  align-items: center;
 }
 
-/* Hover effect on dropdown items */
+.dropdown-column a i {
+  margin-right: 5px;
+}
+
 .dropdown-column a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid #ffcc00;
+  color: #ffcc00;
+  border-bottom: 1px solid white;
 }
 
 /* Reverse dropdown direction for last two items */
@@ -113,4 +124,63 @@
 .menu-item:nth-last-child(-n+2) .dropdown-column {
   margin-right: 0;
   margin-left: 30px;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+/* Rotate bars when open */
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .menu-item {
+    width: 100%;
+    padding: 8px 10px;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px 0;
+    box-shadow: none;
+  }
+
+  .dropdown-column {
+    margin: 0 0 5px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
