@@ -1,198 +1,86 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-.main-header {
-  background: #002b5c;
-  color: #fff;
+/* Top navbar */
+.navbar {
+  background-color: #002f5f;
+  padding: 0 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 5%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  justify-content: flex-end; /* Align menu to the right */
 }
 
-.logo {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #fff;
-  white-space: nowrap;
-  letter-spacing: 1px;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.6rem;
-  display: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.menu-toggle:hover {
-  transform: rotate(90deg);
-}
-
-.main-nav {
-  margin-left: 240px;   /* added margin-left */
-}
-
-.main-nav ul {
+/* Menu list */
+.menu {
   list-style: none;
   display: flex;
-  gap: 30px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+  font-size: 9px; /* Smallest readable font */
+  width: 60%; /* Menu takes 60% of navbar width */
 }
 
-.main-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 0;
-  display: block;
+/* Individual menu items */
+.menu-item {
   position: relative;
-  transition: color 0.3s ease;
+  padding: 10px 10px; /* Reduced padding for smaller visual size */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s;
 }
 
-.main-nav ul li a::after {
-  content: '';
+.menu-item:hover {
+  background-color: #014a90;
+  border-bottom: 2px solid white;
+}
+
+/* Dropdown container (hidden by default) */
+.dropdown-menu {
+  display: none;
   position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -2px;
+  top: calc(100% + 2px);
   left: 0;
-  background-color: #fff;
-  transition: width 0.3s ease;
-}
-
-.main-nav ul li a:hover::after {
-  width: 100%;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #003366;
+  background-color: rgba(0, 47, 95, 0.95);
+  padding: 10px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-wrap: nowrap;
-  gap: 40px;
-  padding: 20px;
-  min-width: 470px;
-  border-top: 2px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-
+  min-width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  z-index: 1000;
+  pointer-events: none;
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: all 0.35s ease;
-  overflow: visible;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.dropdown-content div {
+/* Show dropdown ONLY when hovering "About Us" */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Dropdown columns */
+.dropdown-column {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  margin-right: 30px;
+  font-size: 9px;
 }
 
-.dropdown-content a {
-  color: #fff;
+/* Dropdown links */
+.dropdown-column a {
+  color: white;
+  padding: 4px 0;
   text-decoration: none;
-  font-size: 0.95rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding-bottom: 5px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  font-weight: normal;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s, background 0.3s, padding-left 0.3s;
 }
 
-.dropdown-content a:hover {
-  transform: translateX(5px);
-  color: #ffcc00;
-}
-
-.dropdown:hover .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Special rule for Jobs dropdown to open to the left */
-.jobs-dropdown .dropdown-content {
-  left: auto;
-  right: 0;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .main-nav {
-    display: none;
-    width: 100%;
-    background: #002b5c;
-    margin-left: 0;
-    animation: slideDown 0.4s ease forwards;
-  }
-
-  .main-nav.active {
-    display: block;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .main-nav ul li {
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .dropdown-content {
-    position: static;
-    display: none;
-    flex-direction: column;
-    padding: 10px 20px;
-    gap: 10px;
-    border-top: none;
-    border-radius: 0;
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    overflow: visible;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-    animation: fadeSlide 0.3s ease;
-  }
-
-  /* Ensure Jobs dropdown behaves normally in mobile */
-  .jobs-dropdown .dropdown-content {
-    right: auto;
-    left: 0;
-  }
-}
-
-@keyframes slideDown {
-  from {opacity: 0; transform: translateY(-10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeSlide {
-  from {opacity: 0; transform: translateY(-8px);}
-  to {opacity: 1; transform: translateY(0);}
+/* Hover effect on dropdown items */
+.dropdown-column a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid white;
 }

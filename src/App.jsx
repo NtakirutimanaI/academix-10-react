@@ -19,7 +19,6 @@ function App() {
 
         {/* Register & Login */}
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
 
         {/* Dashboards */}
         <Route path="/student" element={<Student />} />

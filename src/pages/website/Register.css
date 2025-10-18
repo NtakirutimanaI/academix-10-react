@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.auth-box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  max-width: 320px; /* smaller width */
+  width: 100%;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.form-section {
+  flex: 1;
+  padding: 15px;
+}
+
+.form-section h2 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Inputs with border bottom only */
+input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  outline-offset: 2px;
+  outline-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 6px;
+  background-color:  #002f5f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 11px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color:  #002f5f;
+}
+
+.side-section {
+  flex: 1;
+  background-color:  #002f5f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
+  border-top-left-radius: 80px; /* curved area */
+  border-bottom-left-radius: 80px; /* curved area */
+  margin-left: -12px; /* make curve visible */
+  position: relative;
+  z-index: 1;
+  
+}
+
+.side-section h2 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.side-section p {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.side-section button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.side-section button:hover {
+  background-color: white;
+  color:  #002f5f;
+}
+
+a.forgot-password {
+  font-size: 9px;
+  color: #777;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  text-align: right;
+  font-family: 'Poppins', sans-serif;
+}
+
+.social-icons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.social-icons a {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  color: #555;
+  font-size: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .auth-box {
+    flex-direction: column;
+    max-width: 320px;
+  }
+
+  .side-section {
+    padding: 10px;
+    order: -1;
+    border-radius: 0; /* remove curve for mobile */
+    margin-left: 0;
+  }
+
+  .form-section {
+    padding: 10px;
+  }
+
+  .form-section h2 {
+    font-size: 14px;
+  }
+
+  input, button[type="submit"], .side-section button {
+    font-size: 10px;
+  }
+
+  .social-icons a {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+}
