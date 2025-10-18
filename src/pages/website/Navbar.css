@@ -3,7 +3,18 @@
   background-color: #002f5f;
   padding: 0 20px;
   display: flex;
-  justify-content: flex-end; /* Align menu to the right */
+  justify-content: space-between; /* Brand left, menu right */
+  align-items: center;
+  height: 60px;
+}
+
+/* Brand name (ACADEMIX) */
+.brand {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* Menu list */
@@ -21,18 +32,25 @@
 /* Individual menu items */
 .menu-item {
   position: relative;
-  padding: 10px 10px; /* Reduced padding for smaller visual size */
+  padding: 10px 10px;
   color: white;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
   border-bottom: 1px solid transparent;
   transition: border-bottom 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.menu-item i {
+  margin-right: 5px;
+  font-size: 10px;
 }
 
 .menu-item:hover {
   background-color: #014a90;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #ffcc00;
 }
 
 /* Dropdown container (hidden by default) */
@@ -54,7 +72,7 @@
   transition: opacity 0.2s ease-in-out;
 }
 
-/* Show dropdown ONLY when hovering "About Us" */
+/* Show dropdown on hover */
 .dropdown:hover .dropdown-menu {
   display: flex;
   pointer-events: auto;
@@ -82,5 +100,17 @@
 /* Hover effect on dropdown items */
 .dropdown-column a:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffcc00;
+}
+
+/* Reverse dropdown direction for last two items */
+.menu-item:nth-last-child(-n+2) .dropdown-menu {
+  left: auto;
+  right: 0;
+  flex-direction: row-reverse;
+}
+
+.menu-item:nth-last-child(-n+2) .dropdown-column {
+  margin-right: 0;
+  margin-left: 30px;
 }
