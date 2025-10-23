@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 import Navbar from "./Navbar";
-import TopImg from "./TopImg";
+import NewsEvents from "./NewsEvents";
+import CardsSection from "./CardsSection";
+import GetStarted from "./GetStarted";
+import PricingSection from "./PricingSection";
+import NewsletterSection from "./NewsletterSection";
+import Footer from "./Footer";
 import "./Landing.css";
 
 const Landing = () => {
@@ -10,7 +15,12 @@ const Landing = () => {
     <>
     <TopBar />
     <Navbar />
-    <TopImg />
+    <GetStarted />
+    <CardsSection />
+    <NewsEvents />
+    <PricingSection />
+    <NewsletterSection />
+    <Footer />
     </>
   );
 };

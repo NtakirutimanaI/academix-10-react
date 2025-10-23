@@ -3,22 +3,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00bff3;
+  background-color: #71bfec;
   color: white;
   padding: 4px 8px;
   font-family: Arial, sans-serif;
-  width: 100%;         /* full width of screen */
+  width: 100%;         
   box-sizing: border-box;
   overflow: hidden;
   font-size: 8px;
-  flex-wrap: wrap;     /* allow wrapping on smaller screens */
+  flex-wrap: wrap;     
 }
 
 .top-left, .top-right {
   display: flex;
   align-items: center;
   gap: 6px;
-  flex-wrap: wrap;     /* allow wrapping on small screens */
+  flex-wrap: wrap;    
 }
 
 .info-item {
@@ -26,7 +26,7 @@
   align-items: center;
   gap: 4px;
   color: white;
-  background-color: #d4e157;
+  background-color: #014a90;
   padding: 2px 6px;
   border-radius: 12px;
   font-size: 8px;
@@ -34,10 +34,10 @@
 
 .info-item .icon {
   color: #fff;
-  background-color: #d4e157;
+  background-color: #014a90;
   border-radius: 50%;
   padding: 2px;
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .social-icons {
@@ -48,7 +48,7 @@
 }
 
 .social-icon {
-  background-color: #d4e157;
+  background-color: #014a90;
   color: white;
   border-radius: 50%;
   padding: 2px;
@@ -59,9 +59,13 @@
   align-items: center;
   justify-content: center;
 }
+.social-icon:hover {
+  background-color:#ffb600;
+  color: white;
+}
 
 .circle {
-  background-color: #a2d5f2;
+  background-color: #71bfec;
   width: 16px;
   height: 16px;
   border-radius: 50%;

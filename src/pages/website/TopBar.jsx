@@ -28,8 +28,6 @@ const TopBar = () => {
           <FaInstagram className="social-icon" />
           <FaTwitter className="social-icon" />
         </div>
-         <Link to="/register" className="top-link">Register</Link>
-         <Link to="/register" className="top-link">Login</Link>
       </div>
     </div>
   );

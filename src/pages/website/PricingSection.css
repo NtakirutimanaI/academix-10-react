@@ -1,0 +1,212 @@
+/* src/components/PricingSection.css */
+
+.pricing-wrapper {
+  background-color: #0e0e11;
+  color: #fff;
+  padding: 15px 5px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.pricing-header {
+  margin-bottom: 10px;
+}
+
+.pricing-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0f2ff;
+  text-shadow: 0 0 3px rgba(0, 191, 255, 0.4);
+  margin-bottom: 3px;
+}
+
+.pricing-subtitle {
+  font-size: 0.6rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.pricing-toggle {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.pricing-toggle-btn {
+  background-color: #1c1c1f;
+  border: 1px solid #2c2c30;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pricing-toggle-btn.active {
+  background-color: #2a2a33;
+  font-weight: 600;
+}
+
+.pricing-select-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.5rem;
+}
+
+.pricing-select-label {
+  color: #777;
+  margin-bottom: 1px;
+}
+
+.pricing-select {
+  padding: 3px 6px;
+  background-color: #1c1c1f;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.5rem;
+}
+
+/* Ensure all 3 cards fit in one row */
+.pricing-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 12px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.pricing-card {
+  background-color: #1a1a1e;
+  border: 1px solid #333;
+  padding: 8px 5px;
+  border-radius: 6px;
+  flex: 0 0 32%;
+  font-size: 0.5rem;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.pricing-card-popular {
+  border: 1px solid #3b82f6;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 1px 4px;
+  font-size: 0.4rem;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.pricing-plan-name {
+  font-size: 0.7rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.pricing-price {
+  margin-bottom: 6px;
+}
+
+.pricing-original {
+  text-decoration: line-through;
+  color: #666;
+  margin-right: 3px;
+  font-size: 0.45rem;
+}
+
+.pricing-current {
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.pricing-feature-item {
+  margin: 2px 0;
+  font-size: 0.5rem;
+  color: #ccc;
+}
+
+.pricing-trial-btn {
+  background: none;
+  color: #aaa;
+  border: none;
+  margin-bottom: 4px;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+
+.pricing-add-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.55rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.pricing-add-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive tweaks to preserve 3-column layout on very small screens */
+@media (max-width: 500px) {
+  .pricing-title {
+    font-size: 0.75rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 0.55rem;
+  }
+
+  .pricing-cards {
+    gap: 2px;
+  }
+
+  .pricing-card {
+    flex: 0 0 32.5%;
+    padding: 6px 4px;
+  }
+
+  .pricing-plan-name {
+    font-size: 0.6rem;
+  }
+
+  .pricing-current {
+    font-size: 0.6rem;
+  }
+
+  .pricing-feature-item {
+    font-size: 0.45rem;
+  }
+
+  .pricing-add-btn {
+    font-size: 0.5rem;
+    padding: 3px;
+  }
+}

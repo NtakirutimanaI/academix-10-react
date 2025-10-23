@@ -18,8 +18,9 @@ const Navbar = () => {
       </div>
 
       <ul className={`menu ${isOpen ? 'open' : ''}`}>
+        <li className="menu-item">Home</li>
         <li className="menu-item dropdown">
-          <span><i className="fas fa-info-circle top-icon"></i> About Us</span>
+          <span><i className="fas fa-info-circle top-icon"></i> About academix</span>
           <div className="dropdown-menu">
             <div className="dropdown-column">
               <a href="#"><i className="fas fa-bullseye"></i> Mission & Vision</a>
@@ -35,7 +36,7 @@ const Navbar = () => {
         </li>
 
         <li className="menu-item dropdown">
-          <span><i className="fas fa-user-graduate top-icon"></i> Admissions</span>
+          <span><i className="fas fa-user-graduate top-icon"></i>Packages</span>
           <div className="dropdown-menu">
             <div className="dropdown-column">
               <a href="#"><i className="fas fa-file-alt"></i> Apply Now</a>
@@ -51,7 +52,7 @@ const Navbar = () => {
         </li>
 
         <li className="menu-item dropdown">
-          <span><i className="fas fa-book top-icon"></i> Academics</span>
+          <span><i className="fas fa-book top-icon"></i> Contact Us</span>
           <div className="dropdown-menu">
             <div className="dropdown-column">
               <a href="#"><i className="fas fa-school"></i> Middle School</a>
@@ -71,60 +72,8 @@ const Navbar = () => {
           </div>
         </li>
 
-        <li className="menu-item dropdown">
-          <span><i className="fas fa-hands-helping top-icon"></i> Student Support Services</span>
-          <div className="dropdown-menu">
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-user-check"></i> Learning Support</a>
-              <a href="#"><i className="fas fa-hands"></i> Counseling</a>
-            </div>
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-chalkboard-teacher"></i> Advisory Programs</a>
-              <a href="#"><i className="fas fa-restroom"></i> Rest Rooms</a>
-            </div>
-          </div>
-        </li>
-
-        <li className="menu-item dropdown">
-          <span><i className="fas fa-grin-stars top-icon"></i> Student Life</span>
-          <div className="dropdown-menu">
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-futbol"></i> Activities & Athletics</a>
-              <a href="#"><i className="fas fa-notes-medical"></i> Health Services</a>
-            </div>
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-users-cog"></i> Student Council</a>
-              <a href="#"><i className="fas fa-hands-helping"></i> Service Learning</a>
-            </div>
-          </div>
-        </li>
-
-        <li className="menu-item dropdown">
-          <span><i className="fas fa-people-carry top-icon"></i> Community</span>
-          <div className="dropdown-menu">
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-phone"></i> Contact Us</a>
-              <a href="#"><i className="fas fa-user-friends"></i> Visitors</a>
-            </div>
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-hand-holding-heart"></i> Outreaches</a>
-              <a href="#"><i className="fas fa-plane"></i> Trips</a>
-            </div>
-          </div>
-        </li>
-
-        <li className="menu-item dropdown">
-          <span><i className="fas fa-briefcase top-icon"></i> Jobs</span>
-          <div className="dropdown-menu">
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-user-tie"></i> Employment</a>
-              <a href="#"><i className="fas fa-file-contract"></i> Tenders</a>
-            </div>
-            <div className="dropdown-column">
-              <a href="#"><i className="fas fa-ellipsis-h"></i> Others</a>
-              <a href="#"><i className="fas fa-users-cog"></i> Support Team</a>
-            </div>
-          </div>
+        <li className="menu-item-login dropdown">
+          <span><i className="fas fa-hands-helping top-icon"></i><a href="/register"><i className="fas fa-hands"></i> Login</a></span>
         </li>
       </ul>
     </nav>

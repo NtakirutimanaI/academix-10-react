@@ -1,0 +1,155 @@
+.news-events {
+  background: #a2d5f2;
+  color: rgb(17, 1, 1);
+  text-align: center;
+  padding: 5px 8%;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ Wrapper to hold all slides */
+.slide-wrapper {
+  width: 93%;
+  max-width: 1000px;
+  position: relative;
+  height: auto;
+}
+
+/* ✅ Each slide content */
+.slide-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #014a90;
+  padding: 0px;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+/* ✅ Active slide visible and sliding in */
+.slide-content.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+/* ✅ Smooth exit animation (when sliding out) */
+.slide-content:not(.active) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.text-section {
+  flex: 1;
+  text-align: left;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text-section h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 0.6rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.view-btn {
+  background: #ffb600;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: small;
+  transition: background 0.3s;
+  width: 120px;
+  height: 30px;
+}
+
+.view-btn:hover {
+  background: #002f5f;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+}
+
+.arrow {
+  background: white;
+  border: none;
+  border-radius: 50px;
+  color: #00695c;
+  font-size: 0.6rem;
+  cursor: pointer;
+  padding: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.dots {
+  margin-top: 20px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.dot.active {
+  background-color: #ffb600;
+  opacity: 1;
+}

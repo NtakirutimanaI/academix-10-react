@@ -1,0 +1,184 @@
+/* === Footer Main === */
+.footer {
+  background-color: #f7fafd;
+  padding: 20px 15px 10px;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #333;
+}
+
+/* === Top Section (4 Columns) === */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* === Column 1 (About) === */
+.footer-about {
+  max-width: 220px;
+}
+
+.footer-logo {
+  height: 18px;
+  margin-bottom: 6px;
+}
+
+.footer-description {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.footer-download {
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.footer-download:hover {
+  transform: scale(1.05);
+}
+
+/* === Columns 2–4 (Links) === */
+.footer-col h4 {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #000;
+  font-size: 0.8rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 5px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 0.7rem;
+}
+
+.footer-col li:hover {
+  color: #007bff;
+}
+
+.hiring-badge {
+  background-color: #ffc107;
+  font-size: 0.55rem;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-left: 4px;
+  color: #000;
+}
+
+/* === Bottom Section === */
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  flex: 1;
+  min-width: 150px;
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+/* === Social Icons === */
+.footer-socials {
+  display: flex;
+  gap: 6px;
+}
+
+.footer-socials a {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background-color: #00193b;
+  color: #fff;
+  border-color: #00193b;
+}
+
+/* === Global Selector === */
+.footer-global {
+  border: 1px solid #000;
+  border-radius: 15px;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.footer-global:hover {
+  background-color: #00193b;
+  color: #fff;
+}
+
+/* === Scroll to Top Button === */
+.footer-scroll-top {
+  background-color: #00193b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 4px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.footer-scroll-top:hover {
+  background-color: #004080;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-global,
+  .footer-scroll-top {
+    align-self: flex-end;
+  }
+}

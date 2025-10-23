@@ -1,0 +1,282 @@
+/* -----------------------
+   Get Started - Full CSS
+   - Keeps all original rules
+   - Mobile: image moves to BOTTOM
+   - Mobile: image uses slide-up + fade animation
+   - Ensures content fits screen width
+   ----------------------- */
+
+.get-started-section {
+  background: #014a90;
+  width: 100%;
+  padding: 60px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* container constrained to viewport width (prevents overflow) */
+.get-started-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1100px;        /* keeps desktop layout */
+  width: 100%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;               /* safer for vw calculations on small screens */
+}
+
+/* content area */
+.get-started-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* title */
+.get-started-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffb600;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* paragraph/text */
+.get-started-text {
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  background: #fbfbfc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* buttons */
+.get-started-btn,
+.get-started-btn2 {
+  background: #ffb600;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.get-started-btn2 {
+  margin-left: 5px;
+}
+
+.get-started-btn:hover,
+.get-started-btn2:hover {
+  background: #002f5f;
+}
+
+/* image block */
+.get-started-image {
+  flex: 1;
+  min-width: 380px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.get-started-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+  height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* =====================
+   Responsive Design
+===================== */
+
+/* Tablet view */
+@media (max-width: 992px) {
+  .get-started-container {
+    gap: 30px;
+  }
+
+  .get-started-title {
+    font-size: 0.95rem;
+  }
+
+  .get-started-text {
+    font-size: 0.75rem;
+  }
+
+  .get-started-btn,
+  .get-started-btn2 {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .get-started-image img {
+    max-width: 420px;
+  }
+}
+
+/* Mobile view (image should be at the BOTTOM) */
+@media (max-width: 768px) {
+  /* ensure outer wrapper doesn't allow horizontal overflow and equals screen width */
+  .get-started-section {
+    padding: 40px 4%;
+  }
+
+  .get-started-container {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    max-width: 100vw;         /* ensures container doesn't exceed viewport */
+    gap: 18px;
+    padding: 0;
+  }
+
+  /* content should appear before the image */
+  .get-started-content {
+    order: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 4%;
+  }
+
+  /* keep the title size reasonable on mobile */
+  .get-started-title {
+    font-size: 0.95rem;
+  }
+
+  .get-started-text {
+    padding: 18px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  /* place buttons above the image by making them before image in order */
+  .get-started-btn,
+  .get-started-btn2 {
+    display: inline-block;
+    width: auto;
+    margin: 6px 6px 12px;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    order: 1; /* ensure buttons appear before image (they are still in DOM probably inside content) */
+  }
+
+  /* Image placed at the bottom of the stacked column */
+  .get-started-image {
+    order: 2;                 /* large order ensures image comes last */
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4%;
+    box-sizing: border-box;
+    /* apply animation on mobile when layout changes */
+    animation: slideUpFade 600ms ease both;
+  }
+
+  .get-started-image img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .get-started-section {
+    padding: 30px 3.5%;
+  }
+
+  .get-started-container {
+    gap: 14px;
+  }
+
+  .get-started-title {
+    font-size: 0.9rem;
+  }
+
+  .get-started-text {
+    font-size: 0.75rem;
+    padding: 12px;
+  }
+
+  .get-started-btn,
+  .get-started-btn2 {
+    font-size: 0.75rem;
+    padding: 7px 10px;
+    margin: 6px 4px 12px;
+  }
+
+  .get-started-image {
+    padding: 0 3.5%;
+    order: 2;
+  }
+
+  .get-started-image img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* =====================
+   Animations & Accessibility
+===================== */
+
+/* Slide up + fade (image enters with slight upward motion) */
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(6px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Respect user reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .get-started-image {
+    animation: none !important;
+    transition: none !important;
+  }
+}
