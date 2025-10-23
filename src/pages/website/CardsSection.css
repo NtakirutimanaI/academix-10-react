@@ -1,74 +1,76 @@
 .cards-section {
   background: white;
-  padding: 30px 20px;
+  padding: 30px 4%;
   text-align: center;
-  
+  width: 100%;
   box-sizing: border-box;
 }
 
 .cards-title {
-  font-size:30px;
-  font-weight: 800;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 20px;
   color: #333;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  width: 95%;
-  max-width: 1200px;
-  height: auto;
+  grid-template-columns: repeat(4, minmax(80px, 1fr)); /* smaller cards */
+  gap: 6px;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  justify-items: center;
-  align-items:  center;
 }
 
 .card {
-
-  background: #f3f3f3;
-  border-radius: 10px;
-  height: 230px; 
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: left;
   width: 100%;
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.1s ease-in;
+  max-width: 110px; /* smaller max width */
+  margin: 0 auto;
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-2px);
 }
 
+/* ✅ Smaller image size */
 .card-img {
-  width: 75px;
-  height: 75px;
+  width: 50%; /* smaller width */
+  height: auto;
   object-fit: contain;
-  margin-top: 10px;
+  display: block;
+  margin: 6px auto 0;
 }
 
+/* ✅ Background added to text area */
 .card-title {
-  background: #0077bb;
-  color: white;
-  font-size: 20px;
+  font-size: 0.6rem; /* smaller font */
   font-weight: 600;
-  padding: 6px 0;
+  margin: 4px 6px 2px;
+  color: #ffb600;
+  text-align: center;
+  background: #014a90;
+  padding: 3px 5px;
   border-radius: 4px;
-  width: 200px;
 }
 
 .card-text {
-  color: #333;
-  font-size: 0.95rem;
-  margin: 10px 0 10px;
-  padding-bottom: 20px;
-  
+  font-size: 0.5rem; /* smaller font */
+  color: white;
+  margin: 0 6px 6px;
+  line-height: 1.2;
+  text-align: center;
+  background: #014a90;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 /* Responsive */
